@@ -6,6 +6,12 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 
+/**
+ * {@link ConditionalOnSystemProperty} 引导类
+ *
+ * @author zozo
+ * @since 1.0
+ */
 public class ConditionalOnSystemPropertyBootstrap {
 
     @Bean
