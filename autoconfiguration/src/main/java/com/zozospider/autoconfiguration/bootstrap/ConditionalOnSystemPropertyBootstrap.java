@@ -26,7 +26,7 @@ public class ConditionalOnSystemPropertyBootstrap {
                 .web(WebApplicationType.NONE)
                 .run(args);
 
-        // 查找 Bean（ConditionalOnSystemProperty条件满足才可用）
+        // 查找 Bean（当ConditionalOnSystemProperty条件满足才可用）
         String hello = context.getBean("hello", String.class);
 
         System.out.println("hello Bean: " + hello);
