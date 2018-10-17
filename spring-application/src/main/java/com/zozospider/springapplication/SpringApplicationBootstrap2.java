@@ -9,11 +9,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author zozo
  * @since 1.0
  */
-@SpringBootApplication
-public class SpringApplicationBootstrap {
+public class SpringApplicationBootstrap2 {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringApplicationBootstrap.class, args);
+        SpringApplication.run(ApplicationConfiguration.class, args);
+    }
+
+    @SpringBootApplication
+    public static class ApplicationConfiguration {
+
     }
 
 }
