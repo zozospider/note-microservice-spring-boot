@@ -2,3 +2,8 @@
 org.springframework.context.ApplicationContextInitializer=\
 com.zozospider.springapplication.context.FirstApplicationContextInitializer,\
 com.zozospider.springapplication.context.SecondApplicationContextInitializer
+
+# Application Listeners
+org.springframework.context.ApplicationListener=\
+com.zozospider.springapplication.listener.FirstApplicationListener,\
+com.zozospider.springapplication.listener.SecondApplicationListener
