@@ -1,9 +1,13 @@
-# Initializers
+# Initializers (copy from spring-boot-autoconfigure-2.0.5.RELEASE.jar!/META-INF/spring.factories)
 org.springframework.context.ApplicationContextInitializer=\
 com.zozospider.springapplication.context.FirstApplicationContextInitializer,\
 com.zozospider.springapplication.context.SecondApplicationContextInitializer
 
-# Application Listeners
+# Application Listeners (copy from spring-boot-autoconfigure-2.0.5.RELEASE.jar!/META-INF/spring.factories)
 org.springframework.context.ApplicationListener=\
 com.zozospider.springapplication.listener.FirstApplicationListener,\
 com.zozospider.springapplication.listener.SecondApplicationListener
+
+# Run Listeners (copy from spring-boot-2.0.5.RELEASE.jar!/META-INF/spring.factories)
+org.springframework.boot.SpringApplicationRunListener=\
+com.zozospider.springapplication.run.HelloRunListener
