@@ -16,17 +16,31 @@ import org.springframework.core.env.ConfigurableEnvironment;
  */
 public class BeforeConfigFileApplicationListener implements SmartApplicationListener, Ordered {
 
+    /**
+     * 参考 ConfigFileApplicationListener 实现
+     * @param eventType
+     * @return
+     */
     @Override
     public boolean supportsEventType(Class<? extends ApplicationEvent> eventType) {
         return ApplicationEnvironmentPreparedEvent.class.isAssignableFrom(eventType)
                 || ApplicationPreparedEvent.class.isAssignableFrom(eventType);
     }
 
+    /**
+     * 参考 ConfigFileApplicationListener 实现
+     * @param aClass
+     * @return
+     */
     @Override
     public boolean supportsSourceType(Class<?> aClass) {
         return true;
     }
 
+    /**
+     * 参考 ConfigFileApplicationListener 实现，并试图获取 application.properties 中配置的 name 对应的值。
+     * @param event
+     */
     @Override
     public void onApplicationEvent(ApplicationEvent event) {
         if (event instanceof ApplicationEnvironmentPreparedEvent) {
