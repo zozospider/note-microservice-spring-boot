@@ -10,7 +10,8 @@
 		<module>autoconfiguration</module>
 		<module>overview</module>
 		<module>spring-application</module>
-	</modules>
+        <module>spring-webmvc</module>
+    </modules>
 	<packaging>pom</packaging>
 
 	<name>note-microservice-spring-boot</name>
