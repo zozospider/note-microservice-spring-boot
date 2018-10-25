@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Configuration
-//@EnableWebMvc
+// @EnableWebMvc
 public class WebMvcConfig implements WebMvcConfigurer {
 
     /*<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
