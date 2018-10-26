@@ -12,6 +12,7 @@
 		<module>spring-application</module>
         <module>spring-webmvc</module>
         <module>spring-boot-webmvc</module>
+        <module>spring-boot-view</module>
     </modules>
 	<packaging>pom</packaging>
 
