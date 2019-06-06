@@ -3,14 +3,15 @@ package com.zozospider.test.sum;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PositiveIntegerSum {
+public class PositiveIntegerSum2 {
 
     private int N = 7; // 待匹配数
+    private int[] params = new int[]{1, 2, 3, 4, 5};
 
     public static void main(String[] args) {
-        PositiveIntegerSum positiveIntegerSum = new PositiveIntegerSum();
+        PositiveIntegerSum2 positiveIntegerSum = new PositiveIntegerSum2();
         // 从 1 开始试探
-        positiveIntegerSum.division(1);
+        positiveIntegerSum.division(0);
         System.out.println("end");
     }
 
@@ -32,9 +33,9 @@ public class PositiveIntegerSum {
             System.out.print(N + " = ");
             for (int i = 0; i < currentNumbers.size(); i++) {
                 if (i != currentNumbers.size() - 1) {
-                    System.out.print(currentNumbers.get(i) + " + ");
+                    System.out.print(params[currentNumbers.get(i)] + " + ");
                 } else {
-                    System.out.println(currentNumbers.get(i));
+                    System.out.println(params[currentNumbers.get(i)]);
                 }
             }
 
@@ -44,17 +45,17 @@ public class PositiveIntegerSum {
 
         // currentSum < N (即当前试探和未达到 N) 的情况, 循环范围: 输入参数 x (即上一层传进来的试探数 x) 到试探和 N
         } else {
-            for (int i = x; i <= N; i++) {
+            for (int i = x; i < params.length; i++) {
                 // 当前试探数加入试探数字集合
                 currentNumbers.add(i);
                 // 当前试探数累加到试探和
-                currentSum += i;
+                currentSum += params[i];
                 // 递归试探
                 division(i);
                 // 试探完毕后, 将试探数从试探数字集合中移除, 以待下一次循环加上新的试探数来试探
                 currentNumbers.remove(currentNumbers.size() - 1);
                 // 试探完毕后, 将试探数从试探和减去, 以待下一次循环加上新的试探数来试探
-                currentSum -= i;
+                currentSum -= params[i];
             }
         }
 
