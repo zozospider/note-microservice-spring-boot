@@ -46,8 +46,8 @@ public class BillSumHandle {
                     System.out.println("(" + currentMatchKeys.get(i) + "->" + allBill.get(currentMatchKeys.get(i)) + ")");
                 }
             }
-            // 将单次匹配的试探票据集合 加入到 所有匹配的试探票据集合的集合 中
 
+            // 将单次匹配的试探票据集合 加入到 所有匹配的试探票据集合的集合 中
             allMatchKeys.add(new ArrayList<>(currentMatchKeys));
 
         // 如果试探和大于 N, 则返回到上一层 (结束当前 devision, 返回上一个 devision)
