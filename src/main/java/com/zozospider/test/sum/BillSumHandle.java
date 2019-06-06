@@ -1,30 +1,32 @@
 package com.zozospider.test.sum;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * 在指定票据集合里, 找出多个票据金额的和等于指定金额的多个匹配组合集 (单个匹配组合中的票据 key 不能重复)
  */
 public class BillSumHandle {
 
-    private Map<Integer, Double> allBill; // 所有票据集合 (value 已按照票面金额升序排列)
-    private Integer[] allBillKeys; // 所有票据 key (票据 id) 数组
+    private Map<String, Double> allBill; // 所有票据集合 (value 已按照票面金额升序排列)
+    private String[] allBillKeys; // 所有票据 key (票据 id) 数组
     private double sum; // 待匹配票据金额和
 
-    private List<Integer> currentMatchKeys = new ArrayList<>(); // 单次匹配的试探票据集合 (多次匹配可复用)
-    private List<Integer> currentDifferentKeys = new ArrayList<>(); // 单次匹配的试探票据 key (票据 id) 非重复集合 (防止重复 key 被统计) (多次匹配可复用)
+    private List<String> currentMatchKeys = new ArrayList<>(); // 单次匹配的试探票据集合 (多次匹配可复用)
+    private List<String> currentDifferentKeys = new ArrayList<>(); // 单次匹配的试探票据 key (票据 id) 非重复集合 (防止重复 key 被统计) (多次匹配可复用)
     private int currentSum; // 试探票据金额和 (多次匹配可复用)
 
     private int machNumber; // 所有匹配成功次数
-    private List<List<Integer>> allMatchKeys = new ArrayList<>(); // 所有匹配的试探票据集合的集合
+    private List<List<String>> allMatchKeys = new ArrayList<>(); // 所有匹配的试探票据集合的集合
 
-    public BillSumHandle(Map<Integer, Double> allBill, double sum) {
+    public BillSumHandle(Map<String, Double> allBill, double sum) {
         this.allBill = allBill;
-        this.allBillKeys = allBill.keySet().toArray(allBill.keySet().toArray(new Integer[]{}));
+        this.allBillKeys = allBill.keySet().toArray(allBill.keySet().toArray(new String[]{}));
         this.sum = sum;
     }
 
-    public List<List<Integer>> getBill() {
+    public List<List<String>> getBill() {
         division(0);
         return allMatchKeys;
     }
