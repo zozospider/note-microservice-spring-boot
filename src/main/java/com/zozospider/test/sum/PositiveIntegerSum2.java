@@ -3,10 +3,13 @@ package com.zozospider.test.sum;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 整数分解为集合中若干项数据之和 (单个匹配组合中的元素可以重复, 不重复参考 BillSumHandle.java 中引入的 currentDifferentKeys)
+ */
 public class PositiveIntegerSum2 {
 
     private int N = 7; // 待匹配数
-    private int[] params = new int[]{1, 2, 3, 4, 5};
+    private int[] params = new int[]{1, 2, 3, 4, 5}; // 指定集合中查找数据
 
     public static void main(String[] args) {
         PositiveIntegerSum2 positiveIntegerSum = new PositiveIntegerSum2();

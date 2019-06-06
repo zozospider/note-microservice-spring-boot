@@ -3,6 +3,9 @@ package com.zozospider.test.sum;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 整数分解为若干项正整数之和 (单个匹配组合中的元素可以重复, 不重复参考 BillSumHandle.java 中引入的 currentDifferentKeys)
+ */
 public class PositiveIntegerSum {
 
     private int N = 7; // 待匹配数
